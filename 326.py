@@ -1,20 +1,12 @@
-class NumArray(object):
-
-    def __init__(self, nums):
+class Solution(object):
+    def isPowerOfThree(self, n):
         """
-        :type nums: List[int]
+        :type n: int
+        :rtype: bool
         """
-        self.nums=nums
-
-    def sumRange(self, i, j):
-        """
-        :type i: int
-        :type j: int
-        :rtype: int
-        """
-        return sum(self.nums[i:j+1])
-
-
-# Your NumArray object will be instantiated and called as such:
-# obj = NumArray(nums)
-# param_1 = obj.sumRange(i,j)
+        while n>1:
+            if n%3!=0:
+                return False
+            else:
+                n=n/3
+        return n==1
