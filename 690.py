@@ -20,10 +20,9 @@ class Solution(object):
         E={}
         for emp in employees:
             E[emp.id]=[emp.importance,emp.subordinates]
-        if E[id][1]==[]:
-            return E[id][0]
-        else:
+        def sumImp(id):
             s=E[id][0]
             for emp in E[id][1]:
-                s+=self.getImportance(employees, emp)
+                s+=sumImp(emp)
             return s
+        return sumImp(id)
